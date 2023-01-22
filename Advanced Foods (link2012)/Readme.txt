@@ -18,10 +18,12 @@ the datapack.
 
 Campfires and cooking:
 Stand over a campfire in creative to register it to be used as a cooking location.
-*Deleted campfires will unregister themselves IF you are in creative.
-Let players know about the system in your world. For now, I have not added an opion for teaching.
+*Deleted campfires will unregister themselves IF you are in creative (players may replace them at the exact same spot)
+Let players know about the system in your world. For now, I have not added an option for teaching.
+Basically, throw up to 4 pieces of food on a fire. Click to cook when ready. Resulting meal doubles 
+base stats of the ingredient(s)
 
-Items can only be cooked once. Cooked items have the nbt {Cooked:1b}, Add this nbt to any item you
+Items can only be cooked once. Cooked items have the nbt {Cooked:1b}, add this nbt to any item you
 wish not to be cookable.
 
 Normally, up to 4 items can be cooked at once. Cooking adds and doubles the duration of any AOE
@@ -30,14 +32,31 @@ clouds from the ingredients.
 Custom Textures:
 Cooking a single item will set the CustomModelData to 1 on the cooked food. 
 Cooking multiple items results in a "meal", this is rabbit stew. The CustomModelData of the stew
-is set to the highest CustomModelData of the ingredients. 
+is set to the highest CustomModelData of the ingredients. Meals don't stack. 
+
+HEALING 
+Since this system uses aoe clouds, I would use regen for healing. High level regen won't overwrite lower levels
+now with the recent changes, so it won't generally overshadow any existing regen items/potions. Regen 6 (aplifier 5)
+regens 1 hp/tick, so consider using that with particles off. 
+USING REGEN 6+ FOR HEALING PUTS CUSTOM LORE ON THE ITEM ACCORDINGLY
 
 Calls:
-To apply lore to an item, put it into storage at af:food Item, then run the function <>. Your
+To apply lore to an item, put it into storage at af:food Item, then run the function /function af:updatelore. Your
 items lore has been applied to the storage. 
-You may use the function <> to just do this to item you are currently holding.
+You may use the function /function af:updatehand to just do this to item you are currently holding.
+PAINFULLY (for me), this ALL uses translate. So yea, you are welcome <3
 
 Configuration/optimizaiton:
 Feel free to move the entity and player ticking to your own datapack, order shouldn't change anything.
-The campfire entity runs on 5hz, player ticking runs on 20hz. (The most expensive thing is pulling mainhand
-data every tick for food system, if you already do this, consider replacing the storage path this pack uses). 
+The campfire entity runs on 5hz, player ticking runs on 20hz. The whole thing is... surprisingly
+optimized and cheap as is. 
+
+Options may be viewed in the scoreboard af.Options
+items = max # of items that may be cooked together
+
+Bugs and maxes:
+If 2 players finish eating food on the same tick, they will both get the same effect as one of the two
+players.
+A single cooked item can only have up to 50 different status effects (boohoo I know)
+Up to 13 status effects will show in the item lore. There is no limit on the hp recovery shown. https://i.imgur.com/VkFZ7iP.png
+Max shown potion potency is 10. After 5 default en_us.json needs to be updated.

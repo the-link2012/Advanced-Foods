@@ -3,6 +3,13 @@
 scoreboard objectives add n dummy
 scoreboard objectives add math dummy
 scoreboard objectives add temp dummy
+scoreboard objectives add tpcloud dummy
+scoreboard objectives add af.options dummy
+scoreboard objectives add af.activetime dummy
+scoreboard objectives add af.items dummy
+scoreboard objectives add af.options dummy
+scoreboard players add items af.options 0
+execute if score items af.options matches 0 run scoreboard players set items af.options 4
 
 #Rng stuffs
 scoreboard players add in math 0
@@ -25,7 +32,14 @@ scoreboard players add 1hz afloop 0
 scoreboard players add 10s afloop 0
 
 #forceloads
+forceload add 7777 7777
+setblock 7777 76 7777 chest
+setblock 7777 78 7777 glass
 
+
+#teams
+team add af.green
+team modify af.green color green
 
 #setup numbers
 scoreboard objectives add numbers dummy
