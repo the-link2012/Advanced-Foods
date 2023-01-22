@@ -16,6 +16,8 @@ So your food item would look like this:
 *Only effects from the AOE cloud are inherited, if you want to make tweaks, feel free to mess with 
 the datapack. 
 
+Your ingredient(s) don't have to be edible, they may be any item.
+
 Campfires and cooking:
 Stand over a campfire in creative to register it to be used as a cooking location.
 *Deleted campfires will unregister themselves IF you are in creative (players may replace them at the exact same spot)
@@ -60,7 +62,7 @@ If 2 players finish eating food on the same tick, they will both get the same ef
 players (random).
 If you have two different regen potencies at or above 10 (i.e. 10 and 13) on a single cooked item, the 
 lore hearts won't load. Also, just, don't do that. Keep all potencies at 5 so they can combine! 
-The multiplier option causes math errors at the tail of things, epsecially for low durations (healing). If you 
+The multiplier option causes math inaccuracies at the tail of things, epsecially for low durations (healing). If you 
 don't like this, change the multipliers in af:cooking/recursiveduration (1) and af:cooking/checkeffects (2) 
 to not use option/dividers and instead use "*= 2 numbers"
 You can only have up to 50 potion effect combinations on a single cooked item (boohoo I know)
