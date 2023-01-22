@@ -10,9 +10,9 @@ This is done by taking the nbt of an AOE cloud and adding it to the item itself.
 
 Example:
 Your AOE cloud might look like this
-/summon area_effect_cloud ~ ~ ~ {Effects:[{Id:1,Amplifier:1b,Duration:20,ShowParticles:0b}]}
+/summon area_effect_cloud ~ ~ ~ {Effects:[{Id:1,Amplifier:1b,Duration:200,ShowParticles:0b}]}
 So your food item would look like this:
-/give @p potato{Effects:[{Id:1,Amplifier:1b,Duration:20,ShowParticles:0b}]} 1
+/give @p potato{Effects:[{Id:1,Amplifier:1b,Duration:200,ShowParticles:0b}]} 1
 *Only effects from the AOE cloud are inherited, if you want to make tweaks, feel free to mess with 
 the datapack. 
 
@@ -30,7 +30,7 @@ Normally, up to 4 items can be cooked at once. Cooking adds and doubles the dura
 clouds from the ingredients. 
 
 Custom Textures:
-Cooking a single item will set the CustomModelData to 1 on the cooked food. 
+Cooking a single item will set the CustomModelData to 100 on the cooked food. 
 Cooking multiple items results in a "meal", this is rabbit stew. The CustomModelData of the stew
 is set to the highest CustomModelData of the ingredients. Meals don't stack. 
 
@@ -51,12 +51,18 @@ Feel free to move the entity and player ticking to your own datapack, order shou
 The campfire entity runs on 5hz, player ticking runs on 20hz. The whole thing is... surprisingly
 optimized and cheap as is. 
 
-Options may be viewed in the scoreboard af.Options
+Options may be viewed in the scoreboard af.options
 items = max # of items that may be cooked together
+multiplier = %multiplier to give when cooking (default 199/199%)
 
 Bugs and maxes:
 If 2 players finish eating food on the same tick, they will both get the same effect as one of the two
-players.
-A single cooked item can only have up to 50 different status effects (boohoo I know)
+players (random).
+If you have two different regen potencies at or above 10 (i.e. 10 and 13) on a single cooked item, the 
+lore hearts won't load. Also, just, don't do that. Keep all potencies at 5 so they can combine! 
+The multiplier option causes math errors at the tail of things, epsecially for low durations (healing). If you 
+don't like this, change the multipliers in af:cooking/recursiveduration (1) and af:cooking/checkeffects (2) 
+to not use option/dividers and instead use "*= 2 numbers"
+You can only have up to 50 potion effect combinations on a single cooked item (boohoo I know)
 Up to 13 status effects will show in the item lore. There is no limit on the hp recovery shown. https://i.imgur.com/VkFZ7iP.png
-Max shown potion potency is 10. After 5 default en_us.json needs to be updated.
+Max shown potion potency is 10. After 5, default en_us.json needs to be updated.

@@ -10,6 +10,8 @@ scoreboard objectives add af.items dummy
 scoreboard objectives add af.options dummy
 scoreboard players add items af.options 0
 execute if score items af.options matches 0 run scoreboard players set items af.options 4
+scoreboard players add multiplier af.options 0
+execute if score multiplier af.options matches 0 run scoreboard players set multiplier af.options 19999
 
 #Rng stuffs
 scoreboard players add in math 0

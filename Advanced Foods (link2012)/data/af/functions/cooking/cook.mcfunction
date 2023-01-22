@@ -12,8 +12,8 @@ particle instant_effect ~ ~1.2 ~ 0.15 0.3 0.15 0.4 15 normal
 #If 1 item
 execute if entity @s[scores={af.items=1}] positioned ~-1 ~-1 ~-1 as @e[dx=2,dy=10,dz=2,type=item,tag=tobecooked,limit=1,sort=nearest] at @s run function af:cooking/cooksingle
 
-
-
+#If multiple items
+execute if entity @s[scores={af.items=2..}] run function af:cooking/cookmultiple
 
 
 

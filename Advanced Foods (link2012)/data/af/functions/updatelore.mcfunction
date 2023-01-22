@@ -7,10 +7,7 @@ data modify storage af:food Item.tag.display.Lore set value ['{"translate":" "}'
 execute if data storage af:food {Item:{tag:{Cooked:1b}}} run data modify storage af:food Item.tag.display.Lore[0] set value '{"translate":"Cooked","color":"gold","bold":false,"italic":false}'
 execute unless data storage af:food {Item:{tag:{Cooked:1b}}} run data modify storage af:food Item.tag.display.Lore[0] set value '{"translate":"Ingredient","color":"gray","bold":false,"italic":false}'
 
-#HP! ❤⏷
-scoreboard players set hp temp 0
-execute store result score hp temp run data get storage af:food Item.tag.Effects[{Id:10}].Duration
-function af:hps
+
 
 #Effects
 data modify storage af:food Potion set from storage af:food Item.tag.Effects[0]
@@ -85,3 +82,14 @@ data modify storage af:food Lore set from storage af:food Item.tag.display.Lore[
 execute if data storage af:food {Lore:'{"translate":" "}'} run data remove storage af:food Item.tag.display.Lore[1]
 data modify storage af:food Lore set from storage af:food Item.tag.display.Lore[0]
 execute if data storage af:food {Lore:'{"translate":" "}'} run data remove storage af:food Item.tag.display.Lore[0]
+
+#HP! ❤⏷
+scoreboard players set hp temp 0
+execute store result score hp temp run data get storage af:food Item.tag.Effects[{Id:10}].Duration
+execute if score hp temp matches 0 store result score hp temp run data get storage af:food Item.tag.Effects[{Id:10,Amplifier:5b}].Duration
+execute if score hp temp matches 0 store result score hp temp run data get storage af:food Item.tag.Effects[{Id:10,Amplifier:6b}].Duration
+execute if score hp temp matches 0 store result score hp temp run data get storage af:food Item.tag.Effects[{Id:10,Amplifier:7b}].Duration
+execute if score hp temp matches 0 store result score hp temp run data get storage af:food Item.tag.Effects[{Id:10,Amplifier:8b}].Duration
+execute if score hp temp matches 0 store result score hp temp run data get storage af:food Item.tag.Effects[{Id:10,Amplifier:9b}].Duration
+execute if score hp temp matches 0 store result score hp temp run data get storage af:food Item.tag.Effects[{Id:10,Amplifier:10b}].Duration
+function af:hps
