@@ -55,7 +55,8 @@ optimized and cheap as is.
 
 Options may be viewed in the scoreboard af.options
 items = max # of items that may be cooked together
-multiplier = %multiplier to give when cooking (default 199/199%)
+multiplier_single = %multiplier to give when cooking a single piece of food (default 199/199%)
+multiplier_meal = %multiplier to give when cooking a meal (default 249/249%)
 
 Bugs and maxes:
 If 2 players finish eating food on the same tick, they will both get the same effect as one of the two

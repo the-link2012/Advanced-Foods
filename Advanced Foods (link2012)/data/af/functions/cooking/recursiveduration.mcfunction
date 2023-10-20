@@ -3,7 +3,7 @@ scoreboard players set duration temp 0
 execute store result score duration temp run data get storage af:food Item2.tag.effects[0].duration 1
 
 #Multiply duration
-scoreboard players operation duration temp *= multiplier af.options
+scoreboard players operation duration temp *= multiplier_single af.options
 scoreboard players operation duration temp /= 100 numbers
 
 #White it back in

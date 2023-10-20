@@ -18,5 +18,6 @@ function af:updatelore
 #Merge data, add cooked tag, etc.
 data modify entity @e[distance=..10,tag=cooked,tag=!fullycooked,limit=1,sort=nearest] Item set from storage af:food Item
 data modify entity @e[distance=..10,tag=cooked,tag=!fullycooked,limit=1,sort=nearest] Item.tag.Cooked set value 1b
-data modify entity @e[distance=..10,tag=cooked,tag=!fullycooked,limit=1,sort=nearest] Item.tag.CustomModelData set value 100b
+data modify entity @e[distance=..10,tag=cooked,tag=!fullycooked,limit=1,sort=nearest] Item.tag.CustomModelData set from storage af:food Item.tag.CustomModelData
 data modify entity @e[distance=..10,tag=cooked,tag=!fullycooked,limit=1,sort=nearest] Item.Count set value 1b
+data modify entity @e[distance=..10,tag=cooked,tag=!fullycooked,limit=1,sort=nearest] Item.id set value "minecraft:honey_bottle"

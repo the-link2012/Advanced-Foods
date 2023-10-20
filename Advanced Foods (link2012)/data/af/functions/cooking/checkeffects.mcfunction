@@ -94,7 +94,7 @@ execute if score id temp = id2 temp if score amplifier temp = amplifier2 temp ru
 execute if score match temp matches 1.. store result score duration temp run data get storage af:food Item2.tag.effects[0].duration
 execute if score match temp matches 1.. store result score duration2 temp run data get storage af:food effects[0].duration
 #Multiply duration
-execute if score match temp matches 1.. run scoreboard players operation duration temp *= multiplier af.options
+execute if score match temp matches 1.. run scoreboard players operation duration temp *= multiplier_meal af.options
 execute if score match temp matches 1.. run scoreboard players operation duration temp /= 100 numbers
 execute if score match temp matches 1.. run scoreboard players operation duration temp += duration2 temp
 execute if score match temp matches 1.. store result storage af:food Item2.tag.effects[0].duration long 1 run scoreboard players add duration temp 0
@@ -149,7 +149,7 @@ scoreboard players add array temp 1
 data remove storage af:food effects[0]
 #If nothing, save + multiply duration
 execute unless score match temp matches 1.. unless data storage af:food effects[0] store result score duration temp run data get storage af:food Item2.tag.effects[0].duration
-execute unless score match temp matches 1.. unless data storage af:food effects[0] run scoreboard players operation duration temp *= multiplier af.options
+execute unless score match temp matches 1.. unless data storage af:food effects[0] run scoreboard players operation duration temp *= multiplier_meal af.options
 execute unless score match temp matches 1.. unless data storage af:food effects[0] run scoreboard players operation duration temp /= 100 numbers
 execute unless score match temp matches 1.. unless data storage af:food effects[0] store result storage af:food Item2.tag.effects[0].duration long 1 run scoreboard players add duration temp 0
 execute unless score match temp matches 1.. unless data storage af:food effects[0] run data modify storage af:food Item.tag.effects append from storage af:food Item2.tag.effects[0]
