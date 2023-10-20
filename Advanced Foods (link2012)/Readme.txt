@@ -10,9 +10,9 @@ This is done by taking the nbt of an AOE cloud and adding it to the item itself.
 
 Example:
 Your AOE cloud might look like this
-/summon area_effect_cloud ~ ~ ~ {Effects:[{Id:1,Amplifier:1b,Duration:200,ShowParticles:0b}]}
+/summon area_effect_cloud ~ ~ ~ {effects:[{id:"minecraft:speed",amplifier:1b,duration:200,show_particles:0b}]}
 So your food item would look like this:
-/give @p potato{Effects:[{Id:1,Amplifier:1b,Duration:200,ShowParticles:0b}]} 1
+/give @p potato{effects:[{id:"minecraft:speed",amplifier:1b,duration:200,show_particles:0b}]} 1
 *Only effects from the AOE cloud are inherited, if you want to make tweaks, feel free to mess with 
 the datapack. 
 

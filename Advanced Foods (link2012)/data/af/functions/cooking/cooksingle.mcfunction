@@ -3,12 +3,12 @@
 #Move item to storage
 data modify storage af:food Item set from entity @s Item
 scoreboard players set array temp 0
-execute store result score array temp if data storage af:food Item.tag.Effects[]
+execute store result score array temp if data storage af:food Item.tag.effects[]
 
 #Double effects
 data modify storage af:food Item2 set value {}
 data modify storage af:food Item2 set from storage af:food Item
-data modify storage af:food Item.tag.Effects set value []
+data modify storage af:food Item.tag.effects set value []
 function af:cooking/recursiveduration
 
 #Update lore

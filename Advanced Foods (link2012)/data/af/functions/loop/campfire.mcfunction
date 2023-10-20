@@ -1,8 +1,8 @@
 #campfire ticking, 5hz. Runs on all campfires.
 
 #activation
-execute if entity @s[tag=!cooking,tag=!active] if block ~ ~ ~ campfire if entity @e[distance=..0.5,type=item,limit=1,tag=!cooked,nbt=!{Item:{tag:{Cooked:1b}}},nbt={Item:{tag:{Effects:[{}]}}}] run function af:cooking/activate
-execute if entity @s[tag=!cooking,tag=active] unless entity @e[distance=..0.5,type=item,limit=1,tag=!cooked,nbt=!{Item:{tag:{Cooked:1b}}},nbt={Item:{tag:{Effects:[{}]}}}] run function af:cooking/deactivate
+execute if entity @s[tag=!cooking,tag=!active] if block ~ ~ ~ campfire if entity @e[distance=..0.5,type=item,limit=1,tag=!cooked,nbt=!{Item:{tag:{Cooked:1b}}},nbt={Item:{tag:{effects:[{}]}}}] run function af:cooking/activate
+execute if entity @s[tag=!cooking,tag=active] unless entity @e[distance=..0.5,type=item,limit=1,tag=!cooked,nbt=!{Item:{tag:{Cooked:1b}}},nbt={Item:{tag:{effects:[{}]}}}] run function af:cooking/deactivate
 execute if entity @s[tag=active] run function af:cooking/active
 
 #cooking

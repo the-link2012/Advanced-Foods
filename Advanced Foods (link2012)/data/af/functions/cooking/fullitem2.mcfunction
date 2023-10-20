@@ -2,7 +2,7 @@
 
 #First, we clone what we have
 data modify storage af:food effects set value {}
-data modify storage af:food effects set from storage af:food Item.tag.Effects
+data modify storage af:food effects set from storage af:food Item.tag.effects
 ##execute store result score array temp if data storage af:food effects[]
 scoreboard players set array temp 0
 
@@ -10,7 +10,7 @@ scoreboard players set array temp 0
 function af:cooking/checkeffects
 
 #Remove piece of the array
-data remove storage af:food Item2.tag.Effects[0] 
+data remove storage af:food Item2.tag.effects[0]
 
 #If cannot repeat, stop
-execute if data storage af:food Item2.tag.Effects[0] run function af:cooking/fullitem2
+execute if data storage af:food Item2.tag.effects[0] run function af:cooking/fullitem2

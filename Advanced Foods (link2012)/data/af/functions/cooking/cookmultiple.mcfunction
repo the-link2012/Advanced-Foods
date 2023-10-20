@@ -2,7 +2,7 @@
 
 #Clear storage to start
 data modify storage af:food Item set value {}
-data modify storage af:food Item.tag.Effects set value []
+data modify storage af:food Item.tag.effects set value []
 scoreboard players set maxmodeldata temp 0
 
 #Add in all the items
